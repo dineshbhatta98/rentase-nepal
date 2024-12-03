@@ -1,0 +1,93 @@
+ /* General Reset */
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", system-ui;
+    overflow: hidden;
+  }
+
+  /* Background Animation */
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #1b1f4d, #6e1b48, #ff6f61);
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s ease infinite;
+  }
+
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Center    Content */
+  .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+
+  .container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability purpose */
+    z-index: -1;
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  h1 span {
+    color: #ff6f61; 
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    max-width: 600px;
+    animation: fadeIn 3s ease forwards;
+  }
+
+  .button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #ff4b5c; 
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .button:hover {
+    background: #d7374d;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* for fadein Animation */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
